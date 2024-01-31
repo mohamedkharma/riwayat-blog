@@ -1,0 +1,53 @@
+.container {
+
+}
+
+.title {
+  margin: 50px 0px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: capitalize;
+  width: 15%;
+  height: 80px;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.image {
+  border-radius: 50%;
+}
+
+.category.technology {
+  background-color: rgb(192, 182, 182);
+}
+
+.category.health {
+  background-color: rgb(152, 142, 142);
+}
+
+.category.travel {
+  background-color: rgb(135, 128, 128);
+}
+
+.category.sport {
+  background-color: rgb(109, 103, 103);
+}
+
+.category.food {
+  background-color: rgb(84, 78, 78);
+}
+
+.category.book {
+  background-color: rgb(79, 71, 71);
+}
