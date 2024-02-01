@@ -1,0 +1,43 @@
+.categoryList {
+  margin-top: 35px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.categoryItem {
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.technology {
+  background-color: #E0D6B6; /* Light Beige */
+  color: #333333; /* Dark Gray Text */
+}
+
+.health {
+  background-color: #B6A48A; /* Light Taupe */
+  color: #333333; /* Dark Gray Text */
+}
+
+.travel {
+  background-color: #C4BFAF; /* Light Grayish Beige */
+  color: #333333; /* Dark Gray Text */
+}
+
+.sport {
+  background-color: #A99E8D; /* Light Sandy Brown */
+  color: #333333; /* White Text */
+}
+
+.food {
+  background-color: #B5AA99; /* Light Khaki */
+  color: #333333; /* Dark Gray Text */
+}
+
+.book {
+  background-color: #AFA69C; /* Light Warm Gray */
+  color: #333333; /* Dark Gray Text */
+}
