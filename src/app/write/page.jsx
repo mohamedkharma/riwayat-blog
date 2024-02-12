@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./write.module.css";
 import Image from "next/image";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
@@ -14,8 +13,10 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
+import dynamic from "next/dynamic";
 
 const WritePage = () => {
+  const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
   const { status } = useSession();
   const router = useRouter();
 
@@ -24,8 +25,7 @@ const WritePage = () => {
   const [value, setValue] = useState("");
   const [media, setMedia] = useState("");
   const [title, setTitle] = useState("");
-  const [catSlug, setCatSlug] = useState(""); 
-
+  const [catSlug, setCatSlug] = useState("");
 
   useEffect(() => {
     const storage = getStorage(app);
@@ -102,7 +102,7 @@ const WritePage = () => {
         type="text"
         placeholder="Title"
         className={styles.input}
-        onChange={(e) => setTitle(e.target.value)} 
+        onChange={(e) => setTitle(e.target.value)}
       />
       <select
         className={styles.select}
