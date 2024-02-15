@@ -21,7 +21,7 @@ const CategoryList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/categories", {
+        const res = await fetch('/api/categories', {
           cache: "no-store",
         });
         if (!res.ok) {
