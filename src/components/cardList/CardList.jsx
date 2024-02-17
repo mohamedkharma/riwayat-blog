@@ -1,34 +1,50 @@
 "use client"
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./cardList.module.css";
 import Pagination from "../pagination/Pagination";
 import Card from "../card/Card";
 
-const baseUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
+const fetchData = async (page, cat) => {
+  try {
+    const res = await fetch(
+      `/api/posts?page=${page}&cat=${cat || ""}`,
+      {
+        cache: "no-store",
+      }
+    );
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error; // Re-throw the error to be caught by the caller
+  }
+};
 
 const CardList = ({ page, cat }) => {
   const [posts, setPosts] = useState([]);
   const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const getData = async () => {
+    const fetchDataAsync = async () => {
       try {
-        const url = `${baseUrl}/api/posts?page=${page}${cat ? `&cat=${cat}` : ''}`;
-        const res = await fetch(url, { cache: "no-store" });
-        if (!res.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const data = await res.json();
-        setPosts(data.posts);
-        setCount(data.count);
+        setLoading(true);
+        const { posts, count } = await fetchData(page, cat);
+        setPosts(posts);
+        setCount(count);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        setError(error);
         setLoading(false);
       }
     };
-    getData();
+
+    fetchDataAsync();
   }, [page, cat]);
 
   const POST_PER_PAGE = 2;
@@ -39,6 +55,10 @@ const CardList = ({ page, cat }) => {
     return <div>Loading...</div>;
   }
 
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Recent Posts</h1>
@@ -47,7 +67,7 @@ const CardList = ({ page, cat }) => {
           <Card item={item} key={item._id} />
         ))}
       </div>
-      <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
+      <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} cat={cat} />
     </div>
   );
 };
