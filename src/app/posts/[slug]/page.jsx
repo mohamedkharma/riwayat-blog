@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useEffect, useState } from 'react';
 import styles from "./singelPage.module.css";
 import Menu from '@/components/menu/Menu';
@@ -7,7 +8,7 @@ import Comments from '@/components/comments/Comments';
 
 const fetchData = async (slug) => {
   try {
-    const res = await fetch(`/api/posts/${slug}`, {
+    const res = await fetch(`/api/posts/${slug}`, {  // Correct URL format
       cache: "no-store",
     });
 
@@ -22,10 +23,35 @@ const fetchData = async (slug) => {
   }
 };
 
-const SinglePage = async ({ params }) => {
-
+const SinglePage = ({ params }) => {
   const { slug } = params;
-  const data = await fetchData(slug);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchDataAsync = async () => {
+      try {
+        setLoading(true);
+        const responseData = await fetchData(slug);
+        setData(responseData);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    };
+
+    fetchDataAsync();
+  }, [slug]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   return (
     <div className={styles.container}>
@@ -60,7 +86,7 @@ const SinglePage = async ({ params }) => {
         <Menu />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SinglePage
+export default SinglePage;

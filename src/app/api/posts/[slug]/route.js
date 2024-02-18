@@ -1,12 +1,5 @@
-// Import the required modules
-import Cors from 'micro-cors';
 import prisma from "@/utils/connect";
 import { NextResponse } from "next/server";
-
-// Initializing the cors middleware
-const cors = Cors({
-  allowedMethods: ['GET', 'POST'], // Add any other methods your API routes support
-});
 
 // GET SINGLE POST
 export const GET = async (req, { params }) => {
@@ -27,16 +20,3 @@ export const GET = async (req, { params }) => {
     );
   }
 };
-
-// Wrap your API routes with the CORS middleware
-export default cors(async function handler(req, res) {
-  if (req.method === 'GET') {
-    return await GET(req, res);
-  } else if (req.method === 'POST') {
-    return await POST(req, res);
-  } else {
-    return new NextResponse(
-      JSON.stringify({ message: "Method Not Allowed" }, { status: 405 })
-    );
-  }
-});
