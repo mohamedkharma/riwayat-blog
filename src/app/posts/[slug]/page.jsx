@@ -1,25 +1,31 @@
-import React from 'react'
-import styles from "./singelPage.module.css"
-import Menu from '@/components/menu/Menu'
-import Image from 'next/image'
-import Comments from '@/components/comments/Comments'
+"use client"
+import React, { useEffect, useState } from 'react';
+import styles from "./singelPage.module.css";
+import Menu from '@/components/menu/Menu';
+import Image from 'next/image';
+import Comments from '@/components/comments/Comments';
 
-const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
-    cache: "no-store",
-  });
+const fetchData = async (slug) => {
+  try {
+    const res = await fetch(`/api/posts/${slug}`, {
+      cache: "no-store",
+    });
 
-  if (!res.ok) {
-    throw new Error("Failed");
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error;
   }
-
-  return res.json();
 };
 
 const SinglePage = async ({ params }) => {
 
   const { slug } = params;
-  const data = await getData(slug);
+  const data = await fetchData(slug);
 
   return (
     <div className={styles.container}>
