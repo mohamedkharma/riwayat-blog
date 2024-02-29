@@ -15,13 +15,13 @@ const Footer = () => {
           Welcome to <span className={styles.highlight}>Riwayat</span>, a platform
           dedicated to the art of storytelling.
           <br />
-          <span className={styles.highlight}>Riwayat</span>, meaning "stories"
+          <span className={styles.highlight}>Riwayat</span>, meaning &quot;stories&quot;
           in Arabic, is a space where individuals from all walks of life can
           share their unique narratives, experiences, and perspectives.
         </p>
         <p className={styles.desc}>
           At <span className={styles.highlight}>Riwayat</span>, we believe that
-          everyone has a story worth sharing. Whether it's a tale of triumph, a
+          everyone has a story worth sharing. Whether it&apos;s a tale of triumph, a
           moment of reflection, or a journey of self-discovery, each story adds
           richness and depth to the tapestry of human experience.
         </p>
