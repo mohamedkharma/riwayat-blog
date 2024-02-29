@@ -1,23 +1,36 @@
-import React from 'react'
-import styles from "./footer.module.css"
-import Image from 'next/image'
-import Link from 'next/link'
+import React from "react";
+import styles from "./footer.module.css";
+import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
     <div className={styles.container}>
       <div className={styles.info}>
         <div className={styles.logo}>
-          <Image src="/logo.png" alt="riwayat blog" width={50} height={50} />
-          <h1 className={styles.logoText}>Riwayat Blog</h1>
+          <Image src="/logo.png" alt="riwayat" width={50} height={50} />
+          <h1 className={styles.logoText}>Riwayat</h1>
         </div>
-        <p className={styles.desc}>SOME DESCROPTION TO ADD LATERR</p>
+        <p className={styles.desc}>
+          Welcome to <span className={styles.highlight}>Riwayat</span>, a platform
+          dedicated to the art of storytelling.
+          <br />
+          <span className={styles.highlight}>Riwayat</span>, meaning "stories"
+          in Arabic, is a space where individuals from all walks of life can
+          share their unique narratives, experiences, and perspectives.
+        </p>
+        <p className={styles.desc}>
+          At <span className={styles.highlight}>Riwayat</span>, we believe that
+          everyone has a story worth sharing. Whether it's a tale of triumph, a
+          moment of reflection, or a journey of self-discovery, each story adds
+          richness and depth to the tapestry of human experience.
+        </p>
         <div className={styles.social}>
-        <Image src="/facebook.png" alt="facebook" width={24} height={24}/>
-        <Image src="/instagram.png" alt="instagram" width={24} height={24}/>
-        <Image src="/tiktok.png" alt="tiktok" width={24} height={24}/>
-        <Image src="/youtube.png" alt="youtube" width={24} height={24}/>
-      </div>
+          <Image src="/facebook.png" alt="facebook" width={24} height={24} />
+          <Image src="/instagram.png" alt="instagram" width={24} height={24} />
+          <Image src="/tiktok.png" alt="tiktok" width={24} height={24} />
+          <Image src="/youtube.png" alt="youtube" width={24} height={24} />
+        </div>
       </div>
       <div className={styles.links}>
         <div className={styles.list}>
@@ -43,7 +56,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

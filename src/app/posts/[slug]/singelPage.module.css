@@ -84,10 +84,23 @@
   }
 }
 @media screen and (max-width: 1024px) {
+  .infoContainer {
+    display: block;
+  }
+  .title{
+    text-align: center;
+  }
+  .infoContainer > * {
+    margin-bottom: 20px; /* Add some space between elements */
+  }
   .imageContainer {
-    display: none;
+    object-fit: relative;
+  }
+  .userImageContainer {
+    margin-bottom: 20px; /* Add some space below the user image */
   }
 }
+
 @media screen and (max-width: 640px) {
   .title {
     font-size: 36px;
