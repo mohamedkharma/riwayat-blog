@@ -49,4 +49,5 @@ This project utilizes the following technologies:
 - Cloud MongoDB
 - Prisma
 - Firebase
-![React](https://img.icons8.com/color/48/000000/react.png) ![Next.js](https://img.icons8.com/color/48/000000/nextjs.png) ![Auth.js](https://img.icons8.com/ios/50/000000/login-rounded-right.png) ![Google Cloud Auth](https://img.icons8.com/color/48/000000/google-cloud.png) ![Cloud MongoDB](https://img.icons8.com/color/48/000000/mongodb.png) ![Prisma](https://img.icons8.com/ios/50/000000/dns-tool.png) ![Firebase](https://img.icons8.com/color/48/000000/firebase.png)
+  
+![React](https://img.icons8.com/color/48/000000/react.png)  ![Next.js](https://img.icons8.com/color/48/000000/nextjs.png)  ![Auth.js](https://img.icons8.com/ios/50/000000/login-rounded-right.png)  ![Google Cloud Auth](https://img.icons8.com/color/48/000000/google-cloud.png)  ![Cloud MongoDB](https://img.icons8.com/color/48/000000/mongodb.png)  ![Prisma](https://img.icons8.com/ios/50/000000/dns-tool.png)  ![Firebase](https://img.icons8.com/color/48/000000/firebase.png)
