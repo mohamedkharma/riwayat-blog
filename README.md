@@ -1,6 +1,6 @@
 # Riwayat
 
-Welcome to Riwayat - a platform dedicated to the art of storytelling. "Riwayat", meaning in Arabic, is a space where individuals from all walks of life can share their unique narratives, experiences, and perspectives. At Riwayat, we believe that everyone has a story worth sharing. Whether it's a tale of triumph, a moment of reflection, or a journey of self-discovery, each story adds richness and depth to the tapestry of human experience.
+Hey there! Welcome to Riwayat – the platform I've built with Next.js, MongoDB, Prisma, Google Cloud, and Firebase. With these powerful tools, I've created a space where you can share your stories and ideas effortlessly. Whether you're on your desktop or mobile device, you'll experience seamless performance and secure data storage thanks to MongoDB and Prisma. Plus, with Google Cloud and Firebase, you can expect scalability, reliability, and real-time updates.  Riwayat empowers users to express themselves authentically and engage with like-minded individuals. Join Riwayat and let your story be heard.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
