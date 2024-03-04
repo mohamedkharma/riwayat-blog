@@ -49,4 +49,3 @@ This project utilizes the following technologies:
 - Cloud MongoDB
 - Prisma
 - Firebase
-```
