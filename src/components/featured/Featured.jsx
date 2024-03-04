@@ -10,7 +10,7 @@ const Featured = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("/api/posts/aaaa", {
+        const res = await fetch("/api/posts/beyond-the-field", {
           cache: "no-store",
         });
         if (!res.ok) {
@@ -31,6 +31,16 @@ const Featured = () => {
     window.location.href = `/posts/aaaa`;
   };
 
+  const truncateDesc = (desc, maxLength) => {
+    if (!desc) {
+      return ""; // Return an empty string if desc is undefined
+    }
+    if (desc.length <= maxLength) {
+      return desc;
+    }
+    return desc.slice(0, maxLength) + "...";
+  };
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
@@ -38,11 +48,11 @@ const Featured = () => {
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
-          <Image src="/title.png" alt="" fill className={styles.imgae}></Image>
+          <Image src={mainPost.img} alt="" fill className={styles.image}></Image>
         </div>
         <div className={styles.textContainer}>
           <h1 className={styles.title}>{mainPost.title}</h1>
-          <p className={styles.postDesc}>{mainPost.desc}</p>
+          <p className={styles.postDesc}>{truncateDesc(mainPost.desc, 150)}</p>
           <button className={styles.button} onClick={handleReadMore}>
             Read More
           </button>
