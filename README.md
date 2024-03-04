@@ -1,4 +1,3 @@
-```
 # Riwayat
 
 Welcome to Riwayat - a platform dedicated to the art of storytelling. "Riwayat", meaning in Arabic, is a space where individuals from all walks of life can share their unique narratives, experiences, and perspectives. At Riwayat, we believe that everyone has a story worth sharing. Whether it's a tale of triumph, a moment of reflection, or a journey of self-discovery, each story adds richness and depth to the tapestry of human experience.
