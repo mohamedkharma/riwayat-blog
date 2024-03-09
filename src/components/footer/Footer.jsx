@@ -16,14 +16,14 @@ const Footer = () => {
           dedicated to the art of storytelling.
           <br />
           <span className={styles.highlight}>Riwayat</span>, meaning &quot;stories&quot;
-          in Arabic, is a space where individuals from all walks of life can
+          in Arabic, is a space where individuals from all over the world can
           share their unique narratives, experiences, and perspectives.
         </p>
         <p className={styles.desc}>
           At <span className={styles.highlight}>Riwayat</span>, we believe that
-          everyone has a story worth sharing. Whether it&apos;s a tale of triumph, a
-          moment of reflection, or a journey of self-discovery, each story adds
-          richness and depth to the tapestry of human experience.
+          everyone has a story worth sharing. Whether it&apos;s a story of success, a
+          moment of reflection, or a journey of self-discovery, each story makes life 
+          more interesting and meaningful.
         </p>
         <div className={styles.social}>
           <Image src="/facebook.png" alt="facebook" width={24} height={24} />

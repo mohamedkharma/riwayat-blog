@@ -5,7 +5,7 @@ import styles from "./featured.module.css";
 import Image from "next/image";
 
 const Featured = () => {
-  const [mainPost, setMainPost] = useState([]);
+  const [mainPost, setMainPost] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +28,13 @@ const Featured = () => {
 
   const handleReadMore = () => {
     // Navigate to the post page when the button is clicked
-    window.location.href = `/posts/aaaa`;
+    window.location.href = `/posts/beyond-the-field`;
+  };
+
+  const stripHTMLTags = (html) => {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = html;
+    return tempDiv.textContent || tempDiv.innerText || "";
   };
 
   const truncateDesc = (desc, maxLength) => {
@@ -48,11 +54,13 @@ const Featured = () => {
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
-          <Image src={mainPost.img} alt="" fill className={styles.image}></Image>
+          <Image src={mainPost.img} alt="" fill className={styles.image} />
         </div>
         <div className={styles.textContainer}>
           <h1 className={styles.title}>{mainPost.title}</h1>
-          <p className={styles.postDesc}>{truncateDesc(mainPost.desc, 150)}</p>
+          <p className={styles.postDesc}>
+            {truncateDesc(stripHTMLTags(mainPost.desc), 150)}
+          </p>
           <button className={styles.button} onClick={handleReadMore}>
             Read More
           </button>

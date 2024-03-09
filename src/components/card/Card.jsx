@@ -3,6 +3,12 @@ import styles from "./card.module.css";
 import Link from "next/link";
 
 const Card = ({ key, item }) => {
+  // Function to strip HTML tags from the description
+  const stripHTMLTags = (html) => {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = html;
+    return tempDiv.textContent || tempDiv.innerText || "";
+  };
   return (
     <div className={styles.container} key={key}>
       {item.img && (
@@ -21,13 +27,16 @@ const Card = ({ key, item }) => {
                 hour: "2-digit",
                 minute: "2-digit",
               })}
-          </span>{" - "}
+          </span>
+          {" - "}
           <span className={styles.category}>{item.catSlug}</span>
         </div>
         <Link href={`/posts/${item.slug}`}>
           <h1 className={styles.title}>{item.title}</h1>
         </Link>
-        <p className={styles.desc}>{item.desc.substring(0, 60)}</p>
+        <p className={styles.desc}>
+          {stripHTMLTags(item.desc.substring(0, 60))}
+        </p>
         <Link href={`/posts/${item.slug}`} className={styles.link}>
           Read More
         </Link>

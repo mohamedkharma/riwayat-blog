@@ -45,7 +45,47 @@
 }
 
 @media screen and (max-width: 1280px) {
+  .container {
+    flex-direction: column; /* Display items in a column */
+    align-items: center; /* Center items horizontally */
+  }
+
   .imageContainer {
-    display: none;
+    position: relative; /* Positioning context for absolute positioning */
+    width: 100%; /* Make image container take up full width */
+    max-width: 600px; /* Set maximum width for image container */
+    padding-top: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100) */
+    overflow: hidden; /* Hide any overflow content */
+  }
+
+  .image {
+    position: absolute; /* Position the image absolutely within its container */
+    top: 0; /* Align image to the top */
+    left: 0; /* Align image to the left */
+    width: 100%; /* Ensure the image takes up the full width of its container */
+    height: 100%; /* Ensure the image takes up the full height of its container */
+  }
+  .imageContainer {
+    flex: none; /* Remove flex property to prevent stretching */
+    width: 100%; /* Make image container take up full width */
+    height: 0; /* Set initial height to 0 to maintain aspect ratio */
+    padding-top: 75%; /* Set a percentage value to maintain aspect ratio (adjust as needed) */
+    position: relative; /* Positioning context for absolute positioning */
+  }
+
+
+  .textContainer {
+    flex: none; /* Remove flex property to prevent stretching */
+    width: 100%; /* Make text container take up full width */
+    max-width: 600px; /* Set maximum width for text container */
+    text-align: center; /* Center text within textContainer */
+  }
+
+  .date,
+  .category,
+  .desc {
+    text-align: center; /* Center text within textContainer */
+  }
+  .link{    margin: 0 auto; /* Center the button horizontally */
   }
 }
