@@ -1,6 +1,6 @@
 # Riwayat
 
-Hey there! Welcome to [Riwayat](https://riwayat-blog.vercel.app/) – the platform I've built with Next.js, MongoDB, Prisma, Google Cloud, and Firebase. With these powerful tools, I've created a space where you can share your stories and ideas effortlessly. Whether you're on your desktop or mobile device, you'll experience seamless performance and secure data storage thanks to MongoDB and Prisma. Plus, with Google Cloud and Firebase, you can expect scalability, reliability, and real-time updates.  Riwayat empowers users to express themselves authentically and engage with like-minded individuals. Join Riwayat and let your story be heard.
+Hey there! Welcome to [Riwayat](https://riwayat.vercel.app/) – the platform I've built with Next.js, MongoDB, Prisma, Google Cloud, and Firebase. With these powerful tools, I've created a space where you can share your stories and ideas effortlessly. Whether you're on your desktop or mobile device, you'll experience seamless performance and secure data storage thanks to MongoDB and Prisma. Plus, with Google Cloud and Firebase, you can expect scalability, reliability, and real-time updates.  Riwayat empowers users to express themselves authentically and engage with like-minded individuals. Join Riwayat and let your story be heard.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -54,4 +54,4 @@ This project utilizes the following technologies:
 
 ## Website
 
-Check out the live website: [Riwayat](https://riwayat-blog.vercel.app/)
+Check out the live website: [Riwayat](https://riwayat.vercel.app/)
